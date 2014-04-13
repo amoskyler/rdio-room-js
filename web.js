@@ -32,7 +32,9 @@ app.get("/api/sms", function(req, res){
 
 app.get("/api/notify-new/", function(req, res){
     var match = req.query['match'];
-    var toNumber = req.query['number'];
+    var toNumber = req.query['phone_number'];
+    console.log(toNumber);
+    console.log(match);
     var body;
     if(match){
         body = "Your song has been added!";
@@ -46,7 +48,8 @@ app.get("/api/notify-new/", function(req, res){
         to : toNumber,
         from:"+14803516583",
         body: body,
-
+        }, function(err, message){
+            process.stdout.write(message.sid);
         });
 });
 
