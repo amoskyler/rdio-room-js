@@ -66,7 +66,7 @@ function notifyNewQueued(match, phone_number, song) {
         artist: song.artist,
         '/api/notify-new/',
         function(response){ console.log(response); }
-    );
+    });
 }
 
 function addTrackToDOM(song) {
