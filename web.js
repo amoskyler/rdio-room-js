@@ -45,8 +45,8 @@ app.get("/api/notify-new/", function(req, res){
     console.log(toNumber);
     console.log(match);
     var body;
-    if(match){
-        body = song +" by someone has been added!"; //song + " by "
+    if(match === true){
+        body = song +" by "artist" has been added!"; //song + " by "
     }
     else{
         body = "Your song was not found. Sorry. Try again.";
