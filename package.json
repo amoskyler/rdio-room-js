@@ -26,7 +26,8 @@
     "logfmt": "^1.1.2",
     "express": "^4.0.0",
     "hapi": "^4.0.0",
-    "socket.io": "^0.9.16"
+    "socket.io": "^0.9.16",
+    "rdio": "^1.0.1"
   },
   "engines": {
     "node": "0.10.x"
