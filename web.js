@@ -43,9 +43,9 @@ app.get("/api/notify-new/", function(req, res){
     var song = req.query['song'];
     var artist = req.query['artist'];
     console.log(toNumber);
-    console.log(match);
+    console.log(typeof match);
     var body;
-    if(match === true){
+    if(match === "true"){
         body = song +" by "+artist+" has been added!"; //song + " by "
     }
     else{
