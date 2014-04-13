@@ -55,7 +55,8 @@ i.fa.fa-play-circle, i.fa.fa-step-forward {
 .logo a{
 	display:block;
 }
-.banner p{
+
+h1, h2, p {
 	color:#FFF;
 	text-transform: none;
 	font-size: 3em;
@@ -63,11 +64,17 @@ i.fa.fa-play-circle, i.fa.fa-step-forward {
 	padding: 0em;
 	text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
 }
-.banner p span{
+
+h2 {
 	font-weight: 900;
 	margin-left: 10px;
-	font-size: 1.03em;
+	font-size: 1.4em;
 }
+
+#current-track {
+    margin-bottom: 1em;
+}
+
 .banner p.number {
 font-size: 5em;
 padding-bottom:.5em;
@@ -350,29 +357,6 @@ padding-bottom:.5em;
 {
 	padding:24em 6em 6em 0em;
 	position: relative;
-}
-.img_of_monitor 
-{
-	float:left;
-	margin-top: 2em;
-	position: absolute;
-	left:-5em;
-}
-.img_of_monitor  span
-{
-	height: 250px;
-	width: 280px;
-	display: block;
-	margin:0 auto;
-	background: url(../images/spriteimg.png);
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
-	-ms-transition: all 0.3s ease-out;
-	-o-transition: all 0.3s ease-out;
-	transition: all 0.3s ease-out;
-}
-.img_of_monitor  span {
-	background-position: -219px -85px;
 }
 .group_2 .para_1
 {
