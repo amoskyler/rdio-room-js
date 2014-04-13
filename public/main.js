@@ -8,7 +8,7 @@ socket.on('sms', function(data) {
 
 $(document).ready(function(){
     $('#tags').keypress(function(event){
-        if (event.which == 13 || $(this).length > 0)
+        if (event.which === 13 && $(this).length > 0)
             addSongToEndOfQueue($(this).text(), '', false);
     });
 });
