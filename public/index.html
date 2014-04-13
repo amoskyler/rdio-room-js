@@ -1,14 +1,11 @@
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="https://www.rdio.com/api/api.js?client_id=WF00svqcVrTXHv3eHSQO1w"></script>
-
-<!-- websockets stuff
 <script>
-  var socket = io.connect();
-  socket.on('query', function (data) {
-    console.log(data);
-  });
+    var socket = io.connect("http://localhost");
+    socket.on('query', function(query) {
+        var song = getSong(query);
+    })
 </script>
--->
 
 <h1> Hello World </h1>
 
@@ -25,7 +22,7 @@
         R.request({
             method: "search",
             content: {
-                query: querystring,   
+                query: querystring,
                 types: ["Track",],
                 count: 1
             }
@@ -48,7 +45,7 @@
     // notify a user of a newely queued song. 'song' should be an rdio song object.
     // TODO: also notify of queue position and/or duration until play
         ajaxGet({
-            phone_number: phone_number, 
+            phone_number: phone_number,
             song: song.name},
             '/api/notify-new/',
             function(response){ console.log(response); }
@@ -69,7 +66,7 @@
                 if (xhr.status != 0)
                     console.error('Oh no! Something went wrong. Please report this error: \n'+errorThrown+xhr.status+xhr.responseText);
             }
-        }); 
+        });
     }
 
 </script>
