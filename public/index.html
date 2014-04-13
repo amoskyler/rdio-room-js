@@ -13,7 +13,7 @@
 
     R.ready(function(){
         R.authenticate(function(){
-            playSong('t39978279');
+            playSong('sr7321904');
         });
     });
 
@@ -30,9 +30,9 @@
                 var match;
                 if (response.result.number_results > 0) {
                     match = true;
-                    var song = response.result[0];
+                    var song = response.result.results[0];
                     R.player.queue.add(song.key);
-                    console.log("queued: " + song);
+                    console.log("queued: " + song.name);
                 } else {
                     match = false;
                     console.log("no results");
