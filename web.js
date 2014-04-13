@@ -2,7 +2,6 @@ var express = require('express');
 var socketsio = require('socket.io');
 
 
-
 var app = express();
 var server = require ('http').createServer(app);
 app.use(express.static( __dirname  + '/public' ));
@@ -23,6 +22,10 @@ app.get("/api/sms", function(req, res){
     sockets.forEach(function(socket){
         socket.emit('query', {'query' : body});
     });
+});
+
+app.get("/api/notify-new/", function(req, res){
+
 });
 
 var io = socketsio.listen(server);
