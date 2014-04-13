@@ -17,7 +17,7 @@
         });
     });
 
-    function getSong(querystring) {
+    function addSongToEndOfQueue(querystring, phone_number) {
     // takes a string and makes an api query to get the closet-matching track
         R.request({
             method: "search",
@@ -25,23 +25,32 @@
                 query: querystring,
                 types: ["Track",],
                 count: 1
+            },
+            success: function(response) {
+                var match;
+                if (response.result.number_results > 0) {
+                    match = true;
+                    var song = response.result[0];
+                    R.player.queue.add(song.key);
+                    console.log("queued: " + song);
+                } else {
+                    match = false;
+                    console.log("no results");
+                }
+                notifyNewQueued(match, phone_number, song);
+            },
+            error: function(response) {
+                console.log("error: " + response.message);
             }
-        });
-    }
-
-    function addSongToEndOfQueue(song) {
-    // song is an rdio song object
-        R.player.queue.add(song.key);
+        );
     }
 
     function playSong(id) {
     // immediately start playing song with the given id
-        R.ready(function() {
-            R.player.play({source: id});
-        });
+        R.player.play({source: id});
     }
 
-    function notifyNewQueued(phone_number, song) {
+    function notifyNewQueued(match, phone_number, song) {
     // notify a user of a newely queued song. 'song' should be an rdio song object.
     // TODO: also notify of queue position and/or duration until play
         ajaxGet({
