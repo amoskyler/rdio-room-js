@@ -27,7 +27,7 @@ function addSongToEndOfQueue(querystring, phone_number) {
                 match = true;
                 var song = response.result.results[0];
                 R.player.queue.add(song.key);
-                addTracktoDOM(song);
+                addTrackToDOM(song);
                 console.log("queued: " + song.name);
             } else {
                 match = false;
