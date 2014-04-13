@@ -45,6 +45,7 @@
     // notify a user of a newely queued song. 'song' should be an rdio song object.
     // TODO: also notify of queue position and/or duration until play
         ajaxGet({
+            match: match,
             phone_number: phone_number,
             song: song.name},
             '/api/notify-new/',
