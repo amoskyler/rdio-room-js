@@ -55,7 +55,7 @@ function playSong(id) {
 function notifyNewQueued(match, phone_number, song) {
 // notify a user of a newely queued song. 'song' should be an rdio song object.
 // TODO: also notify of queue position and/or duration until play
-    if(typeof(song.name === 'undefined') {
+    if(typeof song.name === 'undefined') {
         song.name = song.artist = '';
     }
 
