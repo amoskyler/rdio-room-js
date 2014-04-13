@@ -3,10 +3,12 @@
 </script>
 <script src="/socket.io/socket.io.js"></script>
 <script>
-    var socket = io.connect("http://6d20eda8.ngrok.com/");
-    socket.on('sms', function(query, number) {
+    var socket = io.connect("http://6e669b52.ngrok.com/");
+    socket.on('sms', function(data) {
+        query = data.query;
+        number = data.number
         addSongToEndOfQueue(query, number);
-        console.log("Song added");
+        console.log(query);
     })
 </script>
 
@@ -16,7 +18,7 @@
 
     R.ready(function(){
         R.authenticate(function(){
-            playSong('sr7321904');
+            playSong('t39978279');
         });
     });
 

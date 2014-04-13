@@ -37,11 +37,12 @@ app.get("/api/notify-new/", function(req, res){
     if(match){
         body = "Your song has been added!";
     }
+
     else{
         body = "Your song was not found. Sorry. Try again.";
     }
 
-    client.mesages.create({
+    client.messages.create({
         to : toNumber,
         from:"+14803516583",
         body: body,
