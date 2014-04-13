@@ -1,3 +1,11 @@
+var socket = io.connect("http://3b3358f2.ngrok.com/");
+socket.on('sms', function(data) {
+    query = data.query;
+    number = data.number
+    addSongToEndOfQueue(query, number);
+    console.log(query);
+})
+
 R.ready(function(){
     R.authenticate(function(){
         playSong('t2910908');
