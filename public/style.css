@@ -50,6 +50,7 @@ i.fa.fa-play-circle, i.fa.fa-step-forward {
 	color: white;
 	text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
     margin: 0 0.25em;
+    cursor: pointer;
 }
 
 .logo a{
