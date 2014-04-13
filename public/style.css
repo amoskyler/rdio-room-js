@@ -75,18 +75,23 @@ h2 {
     margin-bottom: 1em;
 }
 
+.banner {
+	background-color: rgba(0,0,0, 0.6);
+	padding-bottom: 6em;
+}
+
 .banner p.number {
 font-size: 5em;
 padding-bottom:.5em;
 }
-.banner p.little 
+.banner p.little
 {
 	color: white;
 	text-shadow: 1px 1px 0px rgba(0,0,0,0.3);
 	padding:.1em 0em;
 
 	text-align: center;
-} 
+}
 /* start booking_room */
 .searching{
 	width:;
@@ -234,7 +239,7 @@ padding-bottom:.5em;
 	-webkit-border-radius: 3px;
 	-o-border-radius: 3px;
 	-moz-border-radius: 3px;
-	box-shadow: 0px 0px 4px 0px #5E5E5E;
+	box-shadow: 0px 5px 30px 0px rgba(0,0,0,0.5);
 }
 
 .images
@@ -316,6 +321,7 @@ padding-bottom:.5em;
 .tab
 {
 	background: #FFFFFF;
+	box-shadow:  0px 0px 20px 0px rgba(0,0,0,0.5);
 }
 .group_1
 {
@@ -500,7 +506,7 @@ textarea
 	}
 	.img_of_monitor {
 	width: 45%;
-	}	
+	}
 }
 @media only screen and (max-width:1024px)
 {
@@ -806,18 +812,18 @@ textarea
      -moz-transition: 0.5s linear;
      -o-transition: 0.5s linear;
      -ms-transition:0.5s linear;
-     transition: 0.5s linear;	
+     transition: 0.5s linear;
 }
 .uimenu_box_list li a > i{
 	width:30px;
 	height:30px;
 	display:inline-block;
-	background:url(../images/sprite.png) no-repeat;	
+	background:url(../images/sprite.png) no-repeat;
 	vertical-align:middle;
 	transition:none;
 }
 .uimenu_box_list li a:hover > i{
-	background:url(../images/sprite.png) no-repeat;	
+	background:url(../images/sprite.png) no-repeat;
 }
 .uimenu_box_list li a:hover,.uimenu_box_list li.active a{
 	 color: #ffffff;
@@ -868,7 +874,7 @@ textarea
 .uimenu_box_list li a:hover > i.contact{
 	background-position:-40px -236px;
 }
-/* end uimenu_box_list */ 
+/* end uimenu_box_list */
 
 /* begin uisidebar */
 .uisidebar{
