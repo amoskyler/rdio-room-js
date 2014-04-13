@@ -14,9 +14,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" media="all" />
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="https://www.rdio.com/api/api.js?client_id=WF00svqcVrTXHv3eHSQO1w">
-    </script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="https://www.rdio.com/api/api.js?client_id=WF00svqcVrTXHv3eHSQO1w"></script>
     <script src="/main.js"></script>
 </head>
 
@@ -39,7 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="ui-widget">
                           <input type="text" id="tags" value="Add A Song" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Add A Song';}"></div><br/>
 
-    <div class="uimenu_box_list" style="overflow-y:scroll; overflow-x:hidden; max-height:350px;">
+    <div id="song-list" class="uimenu_box_list" style="overflow-y:scroll; overflow-x:hidden; max-height:350px;">
         <ul>
             <li class="active">
                 <a href="#">
