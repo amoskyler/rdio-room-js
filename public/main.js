@@ -87,7 +87,8 @@ function addTrackToDOM(song) {
 
     $li.attr('data-title', song.name)
        .attr('data-artist', song.artist)
-       .attr('data-art', song.icon400.substring(0, foo.length - 7)+'1200.jpg');
+       .attr('data-art',
+             song.icon400.substring(0, song.icon400.length - 7)+'1200.jpg');
 
     var $a = $('<a/>', {
         href: '#'
