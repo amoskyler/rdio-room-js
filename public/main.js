@@ -10,6 +10,12 @@ R.ready(function(){
     R.authenticate(function(){
         //playSong('t2910908');
     });
+    $('#button-play').click(function(){
+        R.player.togglePause();
+    });
+    $('#button-next').click(function(){
+        R.player.next();
+    });
 });
 
 function addSongToEndOfQueue(querystring, phone_number) {
