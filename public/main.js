@@ -23,7 +23,8 @@ R.ready(function(){
         $('.bg').addClass('to-be-deleted');
         var $background = $('<img/>', {
             src: $(top_item).attr('data-art'),
-            style: 'display: none'
+            style: 'display: none',
+            'class': 'bg'
         }).prependTo('body').fadeIn('slow',
             function(){ $('.to-be-deleted').remove() });
     });
@@ -82,7 +83,6 @@ function notifyNewQueued(match, phone_number, song) {
 
 function addTrackToDOM(song) {
     var $li = $('<li/>', {
-        'class': 'bg',
         style: 'display:none'
     }).appendTo('#song-list ul');
 
