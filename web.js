@@ -19,6 +19,7 @@ server.listen(port, function() {
 app.get("/", function(req, res){
    res.sendfile( __dirname + '/public/index.html' );
    console.log("page loaded");
+   req.end();
 });
 
 app.get("/api/sms", function(req, res){
@@ -28,6 +29,8 @@ app.get("/api/sms", function(req, res){
     sockets.forEach(function(socket){
         socket.emit('sms', {'query' : body, 'number' : number});
     });
+    req.end();
+
 });
 
 app.get("/api/notify-new/", function(req, res){
@@ -51,6 +54,7 @@ app.get("/api/notify-new/", function(req, res){
         }, function(err, message){
             process.stdout.write(message.sid);
         });
+    req.end();
 });
 
 var io = socketsio.listen(server);
