@@ -36,8 +36,7 @@ app.get("/api/notify-new/", function(req, res){
     var body;
     if(match){
         body = "Your song has been added!";
-    };
-
+    }
     else{
         body = "Your song was not found. Sorry. Try again.";
     }
