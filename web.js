@@ -5,6 +5,8 @@ var fs = require('fs');
 var socketsio = require('socket.io');
 var rdio = require('rdio');
 var app = express();
+
+
 var sockets = [];
 
 app.use(logfmt.requestLogger());
