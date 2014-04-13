@@ -27,6 +27,7 @@ function addSongToEndOfQueue(querystring, phone_number) {
                 match = true;
                 var song = response.result.results[0];
                 R.player.queue.add(song.key);
+                addTracktoDOM(song);
                 console.log("queued: " + song.name);
             } else {
                 match = false;
@@ -61,6 +62,37 @@ function notifyNewQueued(match, phone_number, song_name) {
         '/api/notify-new/',
         function(response){ console.log(response); }
     );
+}
+
+function addTrackToDOM(song) {
+    var $li = $('<li/>', {
+    }).appendTo('#song-list');
+
+    var $a = $('<a/>', {
+        href: '#'
+    }).appendTo($li);
+
+    var $i1 = $('<i/>', {
+        'class': 'fa fa-volume-up fa-2x'
+    }).appendTo($a);
+
+    var $span1 = $('<span/>', {
+        'class': 'title',
+        'text': song.name
+    }).appendTo($a);
+
+    var $span2 = $('<span/>', {
+        'class': 'artist',
+        'text': song.albumArtist
+    }).appendTo($a);
+
+    var $div = $('<div/>', {
+        'style': 'float:right;valign:top;'
+    }).appendTo($a);
+
+    var $i2 = $('<i/>', {
+        'class': 'fa fa-trash-o fa-2x'
+    }).appendTo($div);
 }
 
 
