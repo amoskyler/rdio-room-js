@@ -63,10 +63,10 @@ function notifyNewQueued(match, phone_number, song) {
         match: match,
         phone_number: phone_number,
         song: song.name,
-        artist: song.artist,
+        artist: song.artist}
         '/api/notify-new/',
-        function(response){ console.log(response); }
-    });
+        function(response){ console.log(response) }
+    );
 }
 
 function addTrackToDOM(song) {
