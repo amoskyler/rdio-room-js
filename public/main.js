@@ -21,21 +21,29 @@ R.ready(function(){
         R.player.togglePause();
     });
     $('#button-next').click(function(){
-        R.player.next();
-        var top_item = "#song-list li:first";
-        $(top_item).remove();
-        $(top_item).addClass('active');
-        $('#current-track h1').text($(top_item).attr('data-title'));
-        $('#current-track h2').text($(top_item).attr('data-artist'));
-        $('.bg').addClass('to-be-deleted');
-        var $background = $('<img/>', {
-            src: $(top_item).attr('data-art'),
-            style: 'display: none',
-            'class': 'bg'
-        }).prependTo('body').fadeIn('slow',
-            function(){ $('.to-be-deleted').remove() });
+        nextSong();
+    });
+    $(document).keypress(function(event){
+        if (event.which === 39)
+            nextSong();
     });
 });
+
+function nextSong() {
+    R.player.next();
+    var top_item = "#song-list li:first";
+    $(top_item).remove();
+    $(top_item).addClass('active');
+    $('#current-track h1').text($(top_item).attr('data-title'));
+    $('#current-track h2').text($(top_item).attr('data-artist'));
+    $('.bg').addClass('to-be-deleted');
+    var $background = $('<img/>', {
+        src: $(top_item).attr('data-art'),
+        style: 'display: none',
+        'class': 'bg'
+    }).prependTo('body').fadeIn('slow',
+        function(){ $('.to-be-deleted').remove() });
+}
 
 function addSongToEndOfQueue(querystring, phone_number, notify) {
 // takes a string and makes an api query to get the closet-matching track
