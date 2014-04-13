@@ -1,0 +1,33 @@
+{
+  "name": "rdio-room-js",
+  "version": "0.0.0",
+  "description": "Text message controled rdio music queue",
+  "main": "web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amoskyler/rdio-room.js"
+  },
+  "keywords": [
+    "rdio",
+    "music",
+    "queue",
+    "text"
+  ],
+  "author": "Amos Kyler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amoskyler/rdio-room.js/issues"
+  },
+  "homepage": "https://github.com/amoskyler/rdio-room.js",
+  "dependencies": {
+    "logfmt": "^1.1.2",
+    "express": "^4.0.0"
+  },
+  "engines": {
+    "node": "0.10.x"
+  }
+}
+}
