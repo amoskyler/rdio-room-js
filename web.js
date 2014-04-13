@@ -1,12 +1,17 @@
 // web.js
-var express = require("express");
-var logfmt = require("logfmt");
+var express = require('express');
+var logfmt = require('logfmt');
+var socketio = require('socket.io')
 var app = express();
 
 app.use(logfmt.requestLogger());
 
 app.get('/', function(req, res) {
-  res.send('Hello World!');
+    console.log(req);
+    var body = req.query["Body"]
+  console.log(body);
+  // your business logic here
+  res.send('<Response><Message>'+body+'</Message></Response>');
 });
 
 var port = Number(process.env.PORT || 5000);
