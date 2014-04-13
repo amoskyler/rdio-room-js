@@ -1,3 +1,4 @@
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="https://www.rdio.com/api/api.js?client_id=WF00svqcVrTXHv3eHSQO1w"></script>
 
 <!-- websockets stuff
@@ -12,6 +13,12 @@
 <h1> Hello World </h1>
 
 <script>
+
+    R.ready(function(){
+        R.authenticate(function(){
+            playSong('t39978279');
+        });
+    });
 
     function getSong(querystring) {
     // takes a string and makes an api query to get the closet-matching track
