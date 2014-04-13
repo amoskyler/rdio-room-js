@@ -37,7 +37,13 @@
                     match = false;
                     console.log("no results");
                 }
-                notifyNewQueued(match, phone_number, song);
+                var song_name;
+                if (typeof song === 'undefined') {
+                    song_name = "";
+                } else {
+                    song_name = song.name;
+                }
+                notifyNewQueued(match, phone_number, song_name);
             },
             error: function(response) {
                 console.log("error: " + response.message);
@@ -50,13 +56,13 @@
         R.player.play({source: id});
     }
 
-    function notifyNewQueued(match, phone_number, song) {
+    function notifyNewQueued(match, phone_number, song_name) {
     // notify a user of a newely queued song. 'song' should be an rdio song object.
     // TODO: also notify of queue position and/or duration until play
         ajaxGet({
             match: match,
             phone_number: phone_number,
-            song: song.name},
+            song: song_name},
             '/api/notify-new/',
             function(response){ console.log(response); }
         );
