@@ -15,6 +15,17 @@ R.ready(function(){
     });
     $('#button-next').click(function(){
         R.player.next();
+        var top_item = "#song-list li:first"
+        $(top_item).remove();
+        $(top_item).addClass('active');
+        $('#current-track h1').text($(top_item).attr('data-title'));
+        $('#current-track h2').text($(top_item).attr('data-artist'));
+        $('.bg').addClass('to-be-deleted');
+        var $background = $('<img/>', {
+            src: $(top_item).attr('data-art'),
+            style: 'display: none'
+        }).prependTo('body').fadeIn('slow',
+            function(){ $('.to-be-deleted').remove() });
     });
 });
 
@@ -73,6 +84,10 @@ function addTrackToDOM(song) {
     var $li = $('<li/>', {
         style: 'display:none'
     }).appendTo('#song-list ul');
+
+    $li.attr('data-title', song.title)
+       .attr('data-artist', song.artist)
+       .attr('data-art', song.icon400.substr(-7)+'1200.jpg');
 
     var $a = $('<a/>', {
         href: '#'
