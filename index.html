@@ -1,0 +1,8 @@
+<h1> Hello World </h1>
+<script src="/socket.io.min.js"></script>
+<script>
+  var socket = io.connect(':3030');
+  socket.on('query', function (data) {
+    console.log(data);
+  });
+</script>
