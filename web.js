@@ -11,25 +11,23 @@ app.use(logfmt.requestLogger());
 app.use(express.static( __dirname  + '/public' ));
 
 app.get('/api/sms', function(req, res) {
-    console.log(req);
     var body = req.query["Body"]
     console.log(body);
     // your business logic here
     if(typeof(body) !== "undefined"){
-        res.sendFile('<Response><Message>'+body+'</Message></Response>');
-    }
-    sockets.forEach(function( socket ){
+        sockets.forEach(function( socket ){
         socket.emit('query', body);
     });
+}
 });
 
-app.get('/', function( req, res ){
-    res.sendfile( __dirname + '/index.html' );
-})
+app.get('/index.html', function( req, res ){
+    //res.sendfile( __dirname + '/index.html' );
+});
 
 var port = Number(process.env.PORT || 5000);
 app.listen(port, function() {
-  console.log("Listening on " + port);
+    console.log("Listening on " + port);
 });
 
 var io = require('socket.io').listen( 3030 );
