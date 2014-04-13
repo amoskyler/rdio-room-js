@@ -15,7 +15,7 @@ R.ready(function(){
     });
     $('#button-next').click(function(){
         R.player.next();
-        var top_item = "#song-list li:first"
+        var top_item = "#song-list li:first";
         $(top_item).remove();
         $(top_item).addClass('active');
         $('#current-track h1').text($(top_item).attr('data-title'));
@@ -85,9 +85,9 @@ function addTrackToDOM(song) {
         style: 'display:none'
     }).appendTo('#song-list ul');
 
-    $li.attr('data-title', song.title)
+    $li.attr('data-title', song.name)
        .attr('data-artist', song.artist)
-       .attr('data-art', song.icon400.substr(-7)+'1200.jpg');
+       .attr('data-art', song.icon400.substring(0, foo.length - 7)+'1200.jpg');
 
     var $a = $('<a/>', {
         href: '#'
