@@ -33,17 +33,17 @@ app.get("/api/sms", function(req, res){
 app.get("/api/notify-new/", function(req, res){
     var match = req.query['match'];
     var toNumber = req.query['phone_number'];
+    var song = req.query['song'];
+    //var artist = req.query['artist'];
     console.log(toNumber);
     console.log(match);
     var body;
     if(match){
-        body = "Your song has been added!";
+        body = song +" by someone has been added!"; //song + " by "
     }
-
     else{
         body = "Your song was not found. Sorry. Try again.";
     }
-
     client.messages.create({
         to : toNumber,
         from:"+14803516583",
