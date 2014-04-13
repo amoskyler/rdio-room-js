@@ -20,22 +20,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script src="/main.js"></script>
 </head>
 
-<script>
-    var socket = io.connect("http://3b3358f2.ngrok.com/");
-    socket.on('sms', function(data) {
-        query = data.query;
-        number = data.number
-        addSongToEndOfQueue(query, number);
-        console.log(query);
-    })
-</script>
-
-<body><img class="bg" src="http://rdio1img-a.akamaihd.net/album/5/9/d/0000000000393d95/3/square-1200.jpg">
+<body>
+    <img class="bg" src="http://rdio1img-a.akamaihd.net/album/5/9/d/0000000000393d95/3/square-1200.jpg">
     <div class="banner"><p class="little">Text a song to:</p>
         <p class="number">480-351-6583</p>
         <div class="wrap">
             <div class="logo">
-                <a href=""> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <i class="fa fa-play-circle fa-5x"></i> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <i class="fa fa-step-forward fa-4x"></i></a>
+                <a href=""><i class="fa fa-play-circle fa-5x"></i><i class="fa fa-step-forward fa-4x"></i></a>
             </div>
             <p>Do You Want to Build a Snowman?</br> <span>Kristen Bell, Agatha Lee Monn, Katie Lopez</span></p>
         </div>
