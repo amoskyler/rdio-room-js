@@ -2,9 +2,16 @@ var socket = io.connect("http://rdio-room-js.herokuapp.com/");
 socket.on('sms', function(data) {
     query = data.query;
     number = data.number
-    addSongToEndOfQueue(query, number);
+    addSongToEndOfQueue(query, number, true);
     console.log(query);
 })
+
+$(document).ready(function(){
+    $('#tags').keypress(function(event){
+        if (event.which == 13 || $(this).length > 0)
+            addSongToEndOfQueue($(this).text(), '', false);
+    });
+});
 
 R.ready(function(){
     R.authenticate(function(){
@@ -30,7 +37,7 @@ R.ready(function(){
     });
 });
 
-function addSongToEndOfQueue(querystring, phone_number) {
+function addSongToEndOfQueue(querystring, phone_number, notify) {
 // takes a string and makes an api query to get the closet-matching track
     R.request({
         method: "search",
@@ -51,7 +58,8 @@ function addSongToEndOfQueue(querystring, phone_number) {
                 match = false;
                 console.log("no results");
             }
-            notifyNewQueued(match, phone_number, song);
+            if (notify)
+                notifyNewQueued(match, phone_number, song);
         },
         error: function(response) {
             console.log("error: " + response.message);
