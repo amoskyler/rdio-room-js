@@ -66,7 +66,8 @@ function notifyNewQueued(match, phone_number, song_name) {
 
 function addTrackToDOM(song) {
     var $li = $('<li/>', {
-    }).appendTo('#song-list');
+        style: 'display:none'
+    }).appendTo('#song-list ul');
 
     var $a = $('<a/>', {
         href: '#'
@@ -93,6 +94,7 @@ function addTrackToDOM(song) {
     var $i2 = $('<i/>', {
         'class': 'fa fa-trash-o fa-2x'
     }).appendTo($div);
+    $li.slideDown();
 }
 
 
