@@ -46,7 +46,7 @@ app.get("/api/notify-new/", function(req, res){
     console.log(typeof match);
     var body;
     if(match === "true"){
-        body = song +" by "+artist+" has been added!"; //song + " by "
+        body = song +" by "+artist+" has been added to the queue!\n\n#ThanksRdio"; //song + " by "
     }
     else{
         body = "Your song was not found. Sorry. Try again.";
