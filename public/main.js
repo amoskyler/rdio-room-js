@@ -1,4 +1,4 @@
-var socket = io.connect("http://3b3358f2.ngrok.com/");
+var socket = io.connect("http://rdio-room-js.herokuapp.com/");
 socket.on('sms', function(data) {
     query = data.query;
     number = data.number
