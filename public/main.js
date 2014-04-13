@@ -33,13 +33,7 @@ function addSongToEndOfQueue(querystring, phone_number) {
                 match = false;
                 console.log("no results");
             }
-            var song_name;
-            if (typeof song === 'undefined') {
-                song_name = "";
-            } else {
-                song_name = song.name;
-            }
-            notifyNewQueued(match, phone_number, song_name);
+            notifyNewQueued(match, phone_number, song);
         },
         error: function(response) {
             console.log("error: " + response.message);
@@ -52,13 +46,14 @@ function playSong(id) {
     R.player.play({source: id});
 }
 
-function notifyNewQueued(match, phone_number, song_name) {
+function notifyNewQueued(match, phone_number, song) {
 // notify a user of a newely queued song. 'song' should be an rdio song object.
 // TODO: also notify of queue position and/or duration until play
     ajaxGet({
         match: match,
         phone_number: phone_number,
-        song: song_name},
+        song: song.name || "",
+        artist: song.artist || ""},
         '/api/notify-new/',
         function(response){ console.log(response); }
     );
@@ -84,7 +79,7 @@ function addTrackToDOM(song) {
 
     var $span2 = $('<span/>', {
         'class': 'artist',
-        'text': song.albumArtist
+        'text': song.artist
     }).appendTo($a);
 
     var $div = $('<div/>', {
