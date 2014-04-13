@@ -58,9 +58,7 @@ app.get("/api/notify-new/", function(req, res){
         }, function(err, message){
             process.stdout.write(message.sid);
         });
-     req.on('end', function(){
-        callback(data);
-    });
+     return "Success";
 });
 
 var io = socketsio.listen(server);
